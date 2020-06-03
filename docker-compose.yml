@@ -2,8 +2,16 @@ version: '3'
 services:
   back:
     build: back/
+    hostname: back
+    container_name: back
+    restart: always
+    ports:
+      - '80:80'
   front:
     build: front/
+    hostname: front
+    container_name: front
+    restart: always
     ports:
       - '8000:80'
   db:
